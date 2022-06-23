@@ -131,3 +131,8 @@ input[type=reset] {
 input[type=reset] :hover {
 	background-color: #EB6767;
 }
+
+label{
+	float: left;
+	width: 75%;
+}
