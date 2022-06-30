@@ -50,3 +50,48 @@ function validar(){
 		return false;
 	}
 }
+
+function mascaraCPF(i) {
+	const value = i.value;
+
+	if (isNaN(value[value.length - 1])) {
+		i.value = value.substring(0, value.length - 1);
+		return;
+	}
+
+	i.setAttribute("maxLength","14");
+
+	if (value.length == 3 || value.length == 7) i.value +=".";
+
+	if (value.length == 11) i.value +="-";
+}
+
+function mascaraCNPJ(i) {
+	const value = i.value;
+
+	if (isNaN(value[value.length - 1])) {
+		i.value = value.substring(0, value.length - 1);
+		return;
+	}
+	i.setAttribute("maxLength", "18");
+
+	if (value.length == 2 || value.length == 6) i.value +=".";
+	
+	if (value.length == 10) i.value +="/";
+
+	if (value.length == 15) i.value +="-";
+}
+
+function mascaraTelefone(i) {
+	const value = i.value;
+
+	if (isNaN(value[value.length - 1])) {
+		i.value = value.substring(0, value.length - 1);
+		return;
+	}
+	i.setAttribute("maxLength", "14");
+
+	if (value.length == 1) i.value = "("+i.value;
+	if (value.length == 3) i.value +=")";
+	if (value.length == 9) i.value +="-";
+}
