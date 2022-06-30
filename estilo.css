@@ -77,22 +77,17 @@ p a {
 }
 
 @media screen and (max-width: 700px) {
-	.container, nav (
+	.container, nav {
 		flex-direction: column;
-	)
+	}
 	header {
 		background-color: green;
 	}
 }
 
-/* CSS para o form */
-/* para todos os inputs */
-
 input{
 	color: purple;
 }
-
-/* Específico */
 
 input[type=text], input[type=email], input[type=tel], select, textarea{
 	width: 100%;
