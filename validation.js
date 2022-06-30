@@ -4,6 +4,7 @@ function validar(){
 	var telefone = formUser.telefone.value;
 	var endereco = formUser.endereco.value;
 	var senha = formUser.senha.value;
+	var senhaConf = formUser.senhaConf.value;
 	var cpf = formUser.cpf.value;
 	var cnpj = formUser.cnpj.value;
 	
@@ -37,16 +38,22 @@ function validar(){
 		return false;
 	}
 
-	if ((cpf == "") && (cnpj.length !== 14)) {
+	if ((cpf == "") && (cnpj.length !== 18)) {
 		alert("Informe os 14 números do CNPJ.");
 		formUser.cnpj.focus();
 		return false;
-	} else if ((cnpj == "") && (cpf.length !== 11)) {
+	} else if ((cnpj == "") && (cpf.length !== 14)) {
 		alert("Informe os 11 números do CPF.");
 		formUser.cpf.focus();
 		return false;
 	} else if ((cpf !== "")&&(cnpj !== "")) {
 		alert("Informe somente o CPF ou CNPJ.")
+		return false;
+	}
+
+	if (senha !== senhaConf) {
+		alert("Senha não confere")
+		formUser.se.focus();
 		return false;
 	}
 }
